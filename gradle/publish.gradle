@@ -1,0 +1,39 @@
+nexusStaging {
+    stagingProfileId = "7dd4d052409ec" //when not defined will be got from server using "packageGroup"
+}
+
+modifyPom {
+    project {
+        name 'com.scmspain:metrics'
+        packaging 'jar'
+        description 'Interface to send custom metrics'
+        url 'https://github.com/scm-spain/metrics'
+        scm {
+            connection 'scm:git@github.com:scm-spain/metrics.git'
+            developerConnection 'scm:git@github.com:scm-spain/metrics.git'
+            url 'https://github.com/scm-spain/metrics'
+        }
+        licenses {
+            license {
+                name 'The Apache License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            }
+        }
+        developers {
+            developer {
+                id 'aramirez-es'
+                name 'Alberto Ramírez'
+                email 'alberto@aramirez.es'
+                organization 'SCM Spain'
+                organizationUrl 'http://www.scmspain.com/'
+            }
+            developer {
+                id 'fiunchinho'
+                name 'Jose Armesto'
+                email 'jose@armesto.net'
+                organization 'SCM Spain'
+                organizationUrl 'http://www.scmspain.com/'
+            }
+        }
+    }
+}

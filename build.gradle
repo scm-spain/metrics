@@ -1,0 +1,44 @@
+group 'com.scmspain'
+
+apply plugin: 'java'
+apply plugin: 'pl.allegro.tech.build.axion-release'
+apply plugin: 'maven'
+apply plugin: 'signing'
+apply plugin: 'com.bmuschko.nexus'
+apply plugin: 'io.codearte.nexus-staging'
+apply from: 'gradle/publish.gradle'
+
+sourceCompatibility = 1.8
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+        classpath 'pl.allegro.tech.build:axion-release-plugin:1.3.3'
+        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.5.3"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.timgroup:java-statsd-client:3.1.0'
+    compile 'com.google.inject:guice:3.0'
+    compile 'com.netflix.archaius:archaius-core:0.7.3'
+    compile 'org.slf4j:slf4j-api:1.7.13'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+scmVersion {
+    ignoreUncommittedChanges = false
+}
+
+allprojects {
+    project.version = scmVersion.version
+}
