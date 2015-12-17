@@ -1,4 +1,6 @@
 # Metrics
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.scmspain/metrics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.scmspain/metrics)
+
 This library tries to abstract the features of StatsD, so we have a common interface even though we want to change the library underneath (StatsD at this point).
 
 # Usage
